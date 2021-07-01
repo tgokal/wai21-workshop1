@@ -27,7 +27,7 @@ Over the next 2 hours we'll be covering the following content:
 
 **Microsoft Careers**
 - We want you to succeed and explore the many incredible careers that Tech and Microsoft offers you. 🚀
-- We'll overview the Microsoft Internship program, Microsoft Aspire program (graduates) and the various roles that we offer - from sales, marketing, operations and the various degrees of technical roles (i.e. Solution Architect, Customer Engineer, Tech Strategy)
+- We'll overview the [Microsoft Protege Program](https://www.microsoft.com/en-au/protege/), [Microsoft Traineeship Program](https://www.microsoft.com/en-au/microsoft-traineeship-program) [Microsoft Internship program](https://www.microsoft.com/en-au/ecif/interns-anz.aspx), [Microsoft Aspire program](https://www.microsoft.com/en-ie/earlycareers/aspire-program) and the various roles that we offer - from sales, marketing, operations and the various degrees of technical roles (i.e. Solution Architect, Customer Engineer, Tech Strategy)
 
 ## **Azure services and related products**
 - Azure VMs
