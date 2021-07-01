@@ -38,3 +38,7 @@ Over the next 2 hours we'll be covering the following content:
 - Azure Virtual Networks
 
 ## **Related Resources**
+- [A Visual Introduction To Azure Fundamentals - Microsoft Tech Community](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/a-visual-introduction-to-azure-fundamentals/ba-p/2132410)
+- [Azure Fundamentals part 1: Describe core Azure concepts (AZ-900) - Learn | Microsoft Docs](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/)
+- [What is Azure – Microsoft Cloud Services | Microsoft Azure](https://azure.microsoft.com/en-au/overview/what-is-azure/)
+- [What Is Microsoft Azure, Anyway?](https://www.howtogeek.com/337961/what-is-microsoft-azure/)
