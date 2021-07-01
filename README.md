@@ -1,6 +1,6 @@
 # **Welcome to the 2021 Women in AI Workshop 1!** 😃 
 
-![WAIxMicrosoft logo](images/workshop-logo.png)
+![WAIxMicrosoft logo](wai21-workshop1/images/workshop-logo.PNG)
 
 We're so excited to have you learn and grow in an rapidly evolving and ever important field. 
 
