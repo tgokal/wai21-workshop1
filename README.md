@@ -30,12 +30,12 @@ Over the next 2 hours we'll be covering the following content:
 - We'll overview the [Microsoft Protege Program](https://www.microsoft.com/en-au/protege/), [Microsoft Traineeship Program](https://www.microsoft.com/en-au/microsoft-traineeship-program) [Microsoft Internship program](https://www.microsoft.com/en-au/ecif/interns-anz.aspx), [Microsoft Aspire program](https://www.microsoft.com/en-ie/earlycareers/aspire-program) and the various roles that we offer - from sales, marketing, operations and the various degrees of technical roles (i.e. Solution Architect, Customer Engineer, Tech Strategy)
 
 ## **Azure services and related products**
-- Azure VMs
-- Azure App Service
-- Azure SQL Database
-- Azure Sentinel
-- Azure Cost Management
-- Azure Virtual Networks
+- [Azure VMs](https://azure.microsoft.com/en-us/services/virtual-machines/)
+- [Azure App Service](https://azure.microsoft.com/en-au/services/app-service/)
+- [Azure SQL Database](https://azure.microsoft.com/en-au/solutions/databases/)
+- [Azure Sentinel](https://azure.microsoft.com/en-au/services/azure-sentinel/)
+- [Azure Cost Management](https://azure.microsoft.com/en-us/services/cost-management/)
+- [Azure Virtual Networks](https://azure.microsoft.com/en-au/services/virtual-network)
 
 ## **Related Resources**
 - [A Visual Introduction To Azure Fundamentals - Microsoft Tech Community](https://techcommunity.microsoft.com/t5/azure-developer-community-blog/a-visual-introduction-to-azure-fundamentals/ba-p/2132410)
