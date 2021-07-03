@@ -1,4 +1,4 @@
-# Hands-on-Lab: Create a Wordpress website hosted in Azure
+# Hands-on-Lab 1: Create a Wordpress website hosted in Azure
 
 **Duration**: 10-15 minutes
 ## Learning Objectives
