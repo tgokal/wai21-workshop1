@@ -36,11 +36,11 @@ Our goal is to provision a Wordpress Installation Azure Website that our users c
 
 The closest our Region to where we are located is often the best Region to provision our resources since it will cost less as we egress data.
 
-    | **Resource Group Field**  | **What we Enter**  |
-    |---|---|
-    |  Subscription | `your_subscription`  |
-    | Resource Group  | `rg-wai-intro2azure-{suffix}`  |
-    |  Region |  `Australia East` |
+| **Resource Group Field**  | **What we Enter**  |
+|---|---|
+|  Subscription | `your_subscription`  |
+| Resource Group  | `rg-wai-intro2azure-{suffix}`  |
+|  Region |  `Australia East` |
 
 ![Create a resource group](images/HOL1/1c_create_rg.PNG) 
 
