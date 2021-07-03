@@ -161,3 +161,9 @@ As we've spun up our App, we've also create our SQL Database and as a result, we
 Congratulations! 🥳 🎊 👏🏽
 
 You've successfully completed this lab by walking through the motions of provisioning Azure resources - an Azure Web App hosting a Wordpress website and a managed Azure SQL Database.
+
+Since we've completed the exercise, it's best practice to delete our resources within our Resource Group. We have to select all 4 of our manually provisioned resources and then select **Delete**.
+
+![Select a free app service](images/HOL1/20_delete_resources.PNG)
+![Select a free app service](images/HOL1/21_delete.PNG)
+![Select a free app service](images/HOL1/22_delete.PNG)
