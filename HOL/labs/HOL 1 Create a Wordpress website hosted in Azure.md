@@ -8,7 +8,8 @@ Let's start off with the basics and a complete a familiar exercise - provisionin
 
 Our goal is to provision a Wordpress Installation Azure Website that our users can use to install WordPress on their local device. We're going to achieve this by:
 
-- Creating an Azure Resource Group
+- Creating an Azure Subscription
+- Provisioning an Azure Resource Group
 - Provisioning a Wordpress website through an Azure Web App
     - Provision an Azure Web App Service plan
     - Provision a Azure SQL Database
