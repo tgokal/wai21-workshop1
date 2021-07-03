@@ -32,7 +32,10 @@ Our goal is to provision a Wordpress Installation Azure Website that our users c
 
 ![Create a resource group](images/HOL1/1b_resource_groups.PNG)
 
-4. Enter in a Resource Group name and select the region which our Azure resources will be provisioned to. The closest our Region to where we are located is often the best Region to provision our resources since it will cost less as we egress data.
+4. Enter in a Resource Group name and select the region which our Azure resources will be provisioned to. 
+
+The closest our Region to where we are located is often the best Region to provision our resources since it will cost less as we egress data.
+
     | **Resource Group Field**  | **What we Enter**  |
     |---|---|
     |  Subscription | `your_subscription`  |
