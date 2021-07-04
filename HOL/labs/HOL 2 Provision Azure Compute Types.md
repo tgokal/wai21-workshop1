@@ -191,6 +191,7 @@ Next, we can create our virtual machine using PowerShell.
 Now, we need to connect to the VM by getting the public IP address using the following command: 
 
 - `Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"` This address makes our VM discoverable on the Internet.
+
     ![Azure Cloud Shell](images/HOL2/25_ip_address.PNG)
 
 - In the command line, we execute the next command which creates a SSH session, allowing us secure access to our VM. 

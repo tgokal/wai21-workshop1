@@ -1,10 +1,11 @@
 # Hands-on-Lab 1: Create a Wordpress website hosted in Azure
 
 **Duration**: 10-15 minutes
-## Learning Objectives
+
+## **Learning Objectives**
 Let's start off with the basics and a complete a familiar exercise - provisioning a resource, namely a Wordpress application that will be entirely hosted in Azure. Although we also provision a SQL Database and an Azure App Service, we won't be going into any of the details of this for HOL 1, but **rather walking through the motions of creating resources using Azure Portal**.
 
-## Our Goal 
+## **Our Goal and Background**
 
 Our goal is to provision a Wordpress Installation Azure Website that our users can use to install WordPress on their local device. We're going to achieve this by:
 
@@ -14,25 +15,33 @@ Our goal is to provision a Wordpress Installation Azure Website that our users c
     - Provision an Azure Web App Service plan
     - Provision a Azure SQL Database
 
-## Solution Architecture
+## **Solution Architecture**
 
 ![Create a resource group](images/HOL1/0_solution_architecture.PNG)
 
-## Step-By-Step Guide
+## **Step-By-Step Guide**
 
-1. Once you've logged into your Azure sandbox, you'll arrive at the **Home Page of the Azure Portal**. 
+### **Log into Azure Sandbox**
+
+Once you've logged into your Azure sandbox, you'll arrive at the **Home Page of the Azure Portal**. 
 
 ![Home Page of Azure Portal](images/HOL1/1_homepage.PNG "Home page of Azure Portal")
 
-2. Select **Resource Groups** 
+### **Select Resource Groups**
+
+Select **Resource Groups** 
 
 ![Create a resource group](images/HOL1/1a_resource_groups.PNG)
 
-3. Select **Create** to provision a new resource group. 
+### **Create a Resource Group**
+
+Select **Create** to provision a new resource group. 
 
 ![Create a resource group](images/HOL1/1b_resource_groups.PNG)
 
-4. Enter in a Resource Group name and select the region which our Azure resources will be provisioned to. 
+### **Enter information for Resource Group**
+
+Enter in a Resource Group name and select the region which our Azure resources will be provisioned to. 
 
 The closest our Region to where we are located is often the best Region to provision our resources since it will cost less as we egress data.
 
@@ -52,7 +61,9 @@ Select **Create** to provision our Resource Group. We'll be redirected to the Re
 
 ![Create a resource group](images/HOL1/1e_resource_group_created.PNG)
 
-5. If we select our Resource Group, we can now **Create resources** by selecting the bottom blue button. 
+### **Create Resource Group**
+
+If we select our Resource Group, we can now **Create resources** by selecting the bottom blue button. 
 
 ![Create a resource](images/HOL1/2_create_resource.PNG) 
 
@@ -66,7 +77,9 @@ For now, we'll just provision a WordPress web application.
 
 ![Azure Marketplace resources](images/HOL1/4_azure_marketplace_lab_resources.PNG)
 
-6. In the Search bar of Azure Marketplace, search for '**wordpress**'. 
+### **Provision Wordpress App**
+
+In the Search bar of Azure Marketplace, search for '**wordpress**'. 
 
 ![Searching for Wordpress resources](images/HOL1/5_search_wordpress.PNG) 
 
@@ -80,7 +93,7 @@ Select the **WordPress App Service resource** and select **Create**.
 
 ![Provisioning WordPress App Service](images/HOL1/7_wordpress_app.PNG)
 
-7. We now need to create our WordPress Resource by providing the below information, like the name of our WordPress application, our resource group and database. 
+We now need to create our WordPress Resource by providing the below information, like the name of our WordPress application, our resource group and database. 
 
 ![Creating a WordPress resource](images/HOL1/8_provision_wordpress.PNG)
 
@@ -93,7 +106,9 @@ Select the **WordPress App Service resource** and select **Create**.
 |  App Service plan | {to be created below in Step 6}  |
 |  Database | {to be created below in Step 7}  |
 
-8. We need to **Create a New App** Service Plan which will inform the features of our Wordpress application (i.e. how much memory we have, the length of time we can use our App and how much we pay for use) By default, we see the below:
+### **Create a New App Service Plan**
+
+We need to **Create a New App** Service Plan which will inform the features of our Wordpress application (i.e. how much memory we have, the length of time we can use our App and how much we pay for use) By default, we see the below:
 
 ![Creating a new App Service Plan](images/HOL1/9_app_service_plan.PNG)
 
@@ -118,7 +133,9 @@ With our resource however, we have the restrictions of 1GB of memory and 60 minu
 
 ![Select a free app service](images/HOL1/11_f1_app.PNG)
 
-9. Next, we need to create a **Database** for our website's backend. 
+### **Create a mySQL Database**
+
+Next, we need to create a **Database** for our website's backend. 
 
 A backend is can be a piece of software or the physical hardware, and in our case is a database where any users enter into our website would be stored. 
 
@@ -154,13 +171,17 @@ As we've spun up our App, we've also create our SQL Database and as a result, we
 
 ![Select a free app service](images/HOL1/18_datainout.PNG)
 
-10. Finally, we test out our App by copying and pasting the URL from the Overview section into a New Tab in our Browser and press **Enter**. 
+### **Test our App**
+
+Finally, we test out our App by copying and pasting the URL from the Overview section into a New Tab in our Browser and press **Enter**. 
 
 ![Select a free app service](images/HOL1/19_website.PNG)
 
-Congratulations! 🥳 🎊 👏🏽
+## Congratulations! 🎊✨🔥 
 
 You've successfully completed this lab by walking through the motions of provisioning Azure resources - an Azure Web App hosting a Wordpress website and a managed Azure SQL Database.
+
+### **Delete Resource Group**
 
 Since we've completed the exercise, it's best practice to delete our resources within our Resource Group. We have to select all 4 of our manually provisioned resources and then select **Delete**.
 
