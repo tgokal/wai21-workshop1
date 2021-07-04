@@ -65,6 +65,8 @@ To see our VM in action, you'll also SSH to the VM and install the NGINX web ser
 
 ## **Solution Architecture**
 
+![Solution Architecture](images/HOL2/00_solution_architecture.PNG)
+
 ## **Step-By-Step Guide**
 
 ### **Log into Azure Sandbox**
