@@ -21,7 +21,7 @@ Virtual machines are like any computer you would have worked with before, or lik
 
 Linux is a type of operating system (OS). You've heard of Windows and Mac - these are operating systems created by Microsoft and Apple respectively and are unique and main product differentiators. Other popular operating systems you would have heard of or used are Android and Linux. 
 
-![Types of Operating Systems](images\HOL2\0b_types_os.jpg)
+![Types of Operating Systems](images\HOL2\0b_types_os.png)
 
 Operating systems are kind of a big deal - it's **the most important piece of software that runs on a computer**. Why? Because it controls and manages a computer's memory and processes (i.e. how many files and photos you can save on your laptop and how quick it runs). So, every time Microsoft or Apple releases a new operating system, like [Windows 11](https://www.microsoft.com/en-au/windows/windows-11) or [macOS Monterey](https://www.apple.com/au/macos/monterey-preview/), software engineers and hardware engineers have developed a new way of optimizing a computer's processes. Think of the operating system as the **connective tissue between the hardware components and the software that we run on a computer** (i.e. apps like Word, Excel, PowerPoint, Pages, Safari, etc.). Without us knowing how to speak a computer's language, we're able to communicate to the computer's hardware all because of an operating system, like Windows 11 or macOS Monterey.
 
@@ -35,7 +35,7 @@ Enter Microsoft Azure! With only a couple of clicks, we can use a computer - or 
 
 Think about Christmas or Black Friday - the demand for online shopping is massive! Online stores like eBay, Myers, Apple, H&M, Lululemon and Uniqlo for example, can scale their virtual machines up and down to support website demand all because they're hosted in the Cloud, and avoid receiving tweets like these...
 
-![Ubuntu](images\HOL2\0d_onlinedown.PNG)
+![Ubuntu](images\HOL2\0d_onlinedown.png)
 
 When we're in Azure we know we can scale the hardware components. But can we do that for the software components? Absolutely! In fact, we can do this by specifying something called an **image**. An image describes the type of operating system (OS) used and it's version for a virtual machine. 
 
@@ -215,15 +215,15 @@ Next, we need to install NGINX on our VM using the following commands. Here we'r
 
 - Once that's been installed, we can type `exit` to leave the SSH session. 
 
-![Azure Cloud Shell](images\HOL2\30_exit.PNG)
+![Azure Cloud Shell](images\HOL2\30_exit.png)
 
 ### **View our VM in action**
 
 To view our VM in action, we can copy and paste our public IP address found in Azure Portal for our VM into a new Browser tab. 
 
-![Azure Cloud Shell](images\HOL2\30b_vm.PNG)
-![Azure Cloud Shell](images\HOL2\31_vm_portal.PNG)
-![Azure Cloud Shell](images\HOL2\32_nginx_server.PNG)
+![Azure Cloud Shell](images\HOL2\30b_vm.png)
+![Azure Cloud Shell](images\HOL2\31_vm_portal.png)
+![Azure Cloud Shell](images\HOL2\32_nginx_server.png)
 
 ## Congratulations! 🎊✨🔥 
 
@@ -233,6 +233,6 @@ You've successfully provisioned a virtual machine from the command line using Po
 
 As best practice, we always delete resources once we've finished using them, by running the following command:
 
-![Azure Cloud Shell](images\HOL2\33_delete_rg.PNG)
+![Azure Cloud Shell](images\HOL2\33_delete_rg.png)
 
-![Azure Cloud Shell](images\HOL2\34_delete_rg.PNG)
+![Azure Cloud Shell](images\HOL2\34_delete_rg.png)
