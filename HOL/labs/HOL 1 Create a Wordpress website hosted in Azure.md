@@ -3,7 +3,7 @@
 **Duration**: 10-15 minutes
 
 ## **Learning Objectives**
-Let's start off with the basics and a complete a familiar exercise - provisioning a resource, namely a Wordpress application that will be entirely hosted in Azure. Although we also provision a SQL Database and an Azure App Service, we won't be going into any of the details of this for HOL 1, but **rather walking through the motions of creating resources using Azure Portal**.
+Let's start off with the basics and a complete a familiar exercise - provisioning a resource, namely a Wordpress application that will be entirely hosted in Azure. Although we also provision a SQL Database and an Azure App Service, we won't be going into any of the details of this for HOL 1, but **rather walking through the motions of creating resources using Azure Portal**. Often, creating resource groups and resources follows the same underlying steps of fill out relevant information fields based on cost, location, scope and time.
 
 ## **Our Goal and Background**
 
@@ -135,7 +135,7 @@ With our resource however, we have the restrictions of 1GB of memory and 60 minu
 
 ### **Create a mySQL Database**
 
-Next, we need to create a **Database** for our website's backend. 
+Next, we need to create a **Database** for our website's backend. A database is meant for storage and is another Azure resource which we can provision.
 
 A backend is can be a piece of software or the physical hardware, and in our case is a database where any users enter into our website would be stored. 
 
