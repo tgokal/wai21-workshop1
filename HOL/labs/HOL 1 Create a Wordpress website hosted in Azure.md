@@ -2,6 +2,23 @@
 
 **Duration**: 10-15 minutes
 
+## Table of Contents
+- [Learning Objectives](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#learning-objectives)
+- [Our Goal and Background](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#our-goal-and-background)
+- [Solution Architecture](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#solution-architecture)
+- [Step-By-Step Guide](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#step-by-step-guide)
+    - [Log into Azure Sandbox](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#log-into-azure-sandbox)
+    - [Select Resource Groups](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#select-resource-groups)
+    - [Create a Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#create-a-resource-group)
+    - [Enter information for Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#enter-information-for-resource-group)
+    - [Create Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#create-resource-group)
+    - [Provision Wordpress App](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#provision-wordpress-app)
+    - [Create a New App Service Plan](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#create-a-new-app-service-plan)
+    - [Create a mySQL Database](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#create-a-mysql-database)
+    - [Test our App](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#test-our-app)
+- [Congratulations!](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#congratulations-)
+- [Delete Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%201%20Create%20a%20Wordpress%20website%20hosted%20in%20Azure.md#delete-resource-group)
+
 ## **Learning Objectives**
 Let's start off with the basics and a complete a familiar exercise - provisioning a resource, namely a Wordpress application that will be entirely hosted in Azure. Although we also provision a SQL Database and an Azure App Service, we won't be going into any of the details of this for HOL 1, but **rather walking through the motions of creating resources using Azure Portal**. Often, creating resource groups and resources follows the same underlying steps of fill out relevant information fields based on cost, location, scope and time.
 

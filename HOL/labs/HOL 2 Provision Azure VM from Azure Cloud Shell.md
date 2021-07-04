@@ -2,6 +2,24 @@
 
 **Duration**: 10 minutes
 
+## Table of Contents
+- [Learning Objectives](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#learning-objectives)
+- [Our Goal and Background](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#our-goal-and-background)
+- [Solution Architecture](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#solution-architecture)
+- [Step-By-Step Guide](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#step-by-step-guide)
+    - [Log into Azure Sandbox](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#log-into-azure-sandbox)
+    - [Open Azure Cloud Shell](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#open-azure-cloud-shell)
+    - [Create a SSH key pair](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-ssh-key-pair)
+    - [Create a Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-resource-group)
+    - [Create a Virtual Network](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-virtual-network)
+    - [Create a Virtual Machine](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-virtual-machine)
+    - [Connect to VM](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#connect-to-vm)
+    - [Install NGINX](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#install-nginx)
+    - [View our VM in action](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#view-our-vm-in-action)
+- [Congratulations!](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#congratulations-)
+- [Delete Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#delete-resource-group)
+
+
 ## **Learning Objectives**
 - Understand what a virtual machine is in Azure.
 - Understand SSH and generate a keygen-pair for secure access into our virtual network and virtual machine.
@@ -15,19 +33,19 @@ Our goal is to provision a Linux virtual machine (VM) in Azure with PowerShell u
 
 Think of a VM as a server - or computer - that exists just like your PC or laptop, but only now it's completely managed by Microsoft in an Azure Datacenter, located in an Azure Region. Microsoft has 42 Azure Regions, more than any cloud provider, and we've even created an [underwater data center](https://news.microsoft.com/innovation-stories/project-natick-underwater-datacenter/)! 
 
-![Home Page of Azure Portal](images/HOL2/0_datacenters.JPG)
+![Home Page of Azure Portal](images/HOL2/0_datacenters.jpg)
 
 Virtual machines are like any computer you would have worked with before, or like the one you're using now; they need software and hardware to work. In our case, we're provisioning a Linux virtual machine.
 
 Linux is a type of operating system (OS). You've heard of Windows and Mac - these are operating systems created by Microsoft and Apple respectively and are unique and main product differentiators. Other popular operating systems you would have heard of or used are Android and Linux. 
 
-![Types of Operating Systems](images/HOL2/0b_types_os.PNG)
+![Types of Operating Systems](images/HOL2/0b_types_os.png)
 
 Operating systems are kind of a big deal - it's **the most important piece of software that runs on a computer**. Why? Because it controls and manages a computer's memory and processes (i.e. how many files and photos you can save on your laptop and how quick it runs). So, every time Microsoft or Apple releases a new operating system, like [Windows 11](https://www.microsoft.com/en-au/windows/windows-11) or [macOS Monterey](https://www.apple.com/au/macos/monterey-preview/), software engineers and hardware engineers have developed a new way of optimizing a computer's processes. Think of the operating system as the **connective tissue between the hardware components and the software that we run on a computer** (i.e. apps like Word, Excel, PowerPoint, Pages, Safari, etc.). Without us knowing how to speak a computer's language, we're able to communicate to the computer's hardware all because of an operating system, like Windows 11 or macOS Monterey.
 
 Whenever we use a computer, we're using it's software, but we also know that a computer is so much more than just it's software. A computer comprises of a central processing unit (CPU), graphics card, sound card, motherboard and random access memory (RAM), to name a few. These are the physical bits and bobs that computer engineers design for efficient computations. 
 
-![Inside a computer](images/HOL2/0a_inside_a_computer.PNG)
+![Inside a computer](images/HOL2/0a_inside_a_computer.png)
 
 Whenever we buy a computer, the hardware components, like CPU and RAM are fixed into place - what we see is what we get. That's all good for our university assignments or Excel spreadsheets, but when big organisations are managing websites and apps where the number of users could increase or decrease, it would be incredibly beneficial to lever with these fixed components. 
 
@@ -35,7 +53,7 @@ Enter Microsoft Azure! With only a couple of clicks, we can use a computer - or 
 
 Think about Christmas or Black Friday - the demand for online shopping is massive! Online stores like eBay, Myers, Apple, H&M, Lululemon and Uniqlo for example, can scale their virtual machines up and down to support website demand all because they're hosted in the Cloud, and avoid receiving tweets like these...
 
-![Ubuntu](images/HOL2/0d_onlinedown.PNG)
+![Ubuntu](images/HOL2/0d_onlinedown.png)
 
 When we're in Azure we know we can scale the hardware components. But can we do that for the software components? Absolutely! In fact, we can do this by specifying something called an **image**. An image describes the type of operating system (OS) used and it's version for a virtual machine. 
 
