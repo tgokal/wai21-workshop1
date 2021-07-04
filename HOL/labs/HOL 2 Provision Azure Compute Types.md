@@ -15,7 +15,7 @@ Our goal is to provision a Linux virtual machine (VM) in Azure with PowerShell u
 
 Think of a VM as a server - or computer - that exists just like your PC or laptop, but only now it's completely managed by Microsoft in an Azure Datacenter, located in an Azure Region. Microsoft has 42 Azure Regions, more than any cloud provider, and we've even created an [underwater data center](https://news.microsoft.com/innovation-stories/project-natick-underwater-datacenter/)! 
 
-![Home Page of Azure Portal](images/HOL2/0_datacenters.JPG)
+![Home Page of Azure Portal](images/HOL2/0_datacenters.jpg)
 
 Virtual machines are like any computer you would have worked with before, or like the one you're using now; they need software and hardware to work. In our case, we're provisioning a Linux virtual machine.
 
