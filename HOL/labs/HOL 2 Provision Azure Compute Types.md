@@ -235,4 +235,4 @@ As best practice, we always delete resources once we've finished using them, by 
 
 ![Azure Cloud Shell](images\HOL2\33_delete_rg.png)
 
-![Azure Cloud Shell](images\HOL2\34_delete_rg.png)
+![Azure Cloud Shell](images\HOL2\34_delete_rg.PNG)
