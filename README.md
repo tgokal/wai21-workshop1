@@ -24,7 +24,7 @@ Simply put, cloud computing is the delivery of computing services—including se
 ### <u>**Hands-on Lab**</u>
 - 3 hands-on labs for 15 minutes each, where you will:
     - Create a WordPress website and host it in Azure
-    - Provision a virtual machine and explore other Azure Compute types
+    - Flex your scripting language skills by provisioning a virtual machine from Azure Cloud Shell and explore other Azure Compute types
     - Provision an Azure SQL Database, query the data and explore for insights
 
 ### <u>**Microsoft Careers**</u>
