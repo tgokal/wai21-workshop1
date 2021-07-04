@@ -21,13 +21,13 @@ Virtual machines are like any computer you would have worked with before, or lik
 
 Linux is a type of operating system (OS). You've heard of Windows and Mac - these are operating systems created by Microsoft and Apple respectively and are unique and main product differentiators. Other popular operating systems you would have heard of or used are Android and Linux. 
 
-![Types of Operating Systems](images\HOL2\0b_types_os.png)
+![Types of Operating Systems](HOL\labs\images\HOL2\0b_types_os.png)
 
 Operating systems are kind of a big deal - it's **the most important piece of software that runs on a computer**. Why? Because it controls and manages a computer's memory and processes (i.e. how many files and photos you can save on your laptop and how quick it runs). So, every time Microsoft or Apple releases a new operating system, like [Windows 11](https://www.microsoft.com/en-au/windows/windows-11) or [macOS Monterey](https://www.apple.com/au/macos/monterey-preview/), software engineers and hardware engineers have developed a new way of optimizing a computer's processes. Think of the operating system as the **connective tissue between the hardware components and the software that we run on a computer** (i.e. apps like Word, Excel, PowerPoint, Pages, Safari, etc.). Without us knowing how to speak a computer's language, we're able to communicate to the computer's hardware all because of an operating system, like Windows 11 or macOS Monterey.
 
 Whenever we use a computer, we're using it's software, but we also know that a computer is so much more than just it's software. A computer comprises of a central processing unit (CPU), graphics card, sound card, motherboard and random access memory (RAM), to name a few. These are the physical bits and bobs that computer engineers design for efficient computations. 
 
-![Inside a computer](images/HOL2/0a_inside_a_computer.PNG)
+![Inside a computer](images/HOL2/0a_inside_a_computer.png)
 
 Whenever we buy a computer, the hardware components, like CPU and RAM are fixed into place - what we see is what we get. That's all good for our university assignments or Excel spreadsheets, but when big organisations are managing websites and apps where the number of users could increase or decrease, it would be incredibly beneficial to lever with these fixed components. 
 
