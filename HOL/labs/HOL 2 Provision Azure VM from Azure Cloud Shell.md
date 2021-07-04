@@ -53,7 +53,7 @@ Enter Microsoft Azure! With only a couple of clicks, we can use a computer - or 
 
 Think about Christmas or Black Friday - the demand for online shopping is massive! Online stores like eBay, Myers, Apple, H&M, Lululemon and Uniqlo for example, can scale their virtual machines up and down to support website demand all because they're hosted in the Cloud, and avoid receiving tweets like these...
 
-![Ubuntu](images/HOL2/0d_onlinedown.png)
+![Twitter](images/HOL2/0d_onlinedown.PNG)
 
 When we're in Azure we know we can scale the hardware components. But can we do that for the software components? Absolutely! In fact, we can do this by specifying something called an **image**. An image describes the type of operating system (OS) used and it's version for a virtual machine. 
 
