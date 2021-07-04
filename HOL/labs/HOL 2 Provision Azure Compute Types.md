@@ -15,19 +15,19 @@ Our goal is to provision a Linux virtual machine (VM) in Azure with PowerShell u
 
 Think of a VM as a server - or computer - that exists just like your PC or laptop, but only now it's completely managed by Microsoft in an Azure Datacenter, located in an Azure Region. Microsoft has 42 Azure Regions, more than any cloud provider, and we've even created an [underwater data center](https://news.microsoft.com/innovation-stories/project-natick-underwater-datacenter/)! 
 
-![Home Page of Azure Portal](images/HOL2/0_datacenters.jpg)
+![Home Page of Azure Portal](images/HOL2/0_datacenters.JPG)
 
 Virtual machines are like any computer you would have worked with before, or like the one you're using now; they need software and hardware to work. In our case, we're provisioning a Linux virtual machine.
 
 Linux is a type of operating system (OS). You've heard of Windows and Mac - these are operating systems created by Microsoft and Apple respectively and are unique and main product differentiators. Other popular operating systems you would have heard of or used are Android and Linux. 
 
-![Types of Operating Systems](images\HOL2\0b_types_os.png)
+![Types of Operating Systems](images/HOL2/0b_types_os.PNG)
 
 Operating systems are kind of a big deal - it's **the most important piece of software that runs on a computer**. Why? Because it controls and manages a computer's memory and processes (i.e. how many files and photos you can save on your laptop and how quick it runs). So, every time Microsoft or Apple releases a new operating system, like [Windows 11](https://www.microsoft.com/en-au/windows/windows-11) or [macOS Monterey](https://www.apple.com/au/macos/monterey-preview/), software engineers and hardware engineers have developed a new way of optimizing a computer's processes. Think of the operating system as the **connective tissue between the hardware components and the software that we run on a computer** (i.e. apps like Word, Excel, PowerPoint, Pages, Safari, etc.). Without us knowing how to speak a computer's language, we're able to communicate to the computer's hardware all because of an operating system, like Windows 11 or macOS Monterey.
 
 Whenever we use a computer, we're using it's software, but we also know that a computer is so much more than just it's software. A computer comprises of a central processing unit (CPU), graphics card, sound card, motherboard and random access memory (RAM), to name a few. These are the physical bits and bobs that computer engineers design for efficient computations. 
 
-![Inside a computer](images/HOL2/0a_inside_a_computer.png)
+![Inside a computer](images/HOL2/0a_inside_a_computer.PNG)
 
 Whenever we buy a computer, the hardware components, like CPU and RAM are fixed into place - what we see is what we get. That's all good for our university assignments or Excel spreadsheets, but when big organisations are managing websites and apps where the number of users could increase or decrease, it would be incredibly beneficial to lever with these fixed components. 
 
@@ -35,7 +35,7 @@ Enter Microsoft Azure! With only a couple of clicks, we can use a computer - or 
 
 Think about Christmas or Black Friday - the demand for online shopping is massive! Online stores like eBay, Myers, Apple, H&M, Lululemon and Uniqlo for example, can scale their virtual machines up and down to support website demand all because they're hosted in the Cloud, and avoid receiving tweets like these...
 
-![Ubuntu](images\HOL2\0d_onlinedown.png)
+![Ubuntu](images/HOL2/0d_onlinedown.PNG)
 
 When we're in Azure we know we can scale the hardware components. But can we do that for the software components? Absolutely! In fact, we can do this by specifying something called an **image**. An image describes the type of operating system (OS) used and it's version for a virtual machine. 
 
@@ -111,46 +111,46 @@ Create a virtual network and related resources. These resources will allow our V
 
     -  `$subnetConfig = New-AzVirtualNetworkSubnetConfig -Name "mySubnet" -AddressPrefix 192.168.1.0/24`
 
-    ![Azure Cloud Shell](images\HOL2\10_subnet_config.PNG)
+    ![Azure Cloud Shell](images/HOL2/10_subnet_config.PNG)
 
 - Next, we define our **virtual network**, which connects our VM to the Internet. We define it in our `myResourceGroup` and call our `$subnetConfig`:
 
     - `$vnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myVNET" -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig`
 
-    ![Azure Cloud Shell](images\HOL2\11_vnet.PNG)
+    ![Azure Cloud Shell](images/HOL2/11_vnet.PNG)
 
 - We define our public IP address which makes our VM discoverable on the Internet. Again, we define this in our `myResourceGroup`:
 
     - `$pip = New-AzPublicIpAddress -ResourceGroupName "myResourceGroup" -Location "EastUS" -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)"`
 
-    ![Azure Cloud Shell](images\HOL2\12_ip.PNG)
+    ![Azure Cloud Shell](images/HOL2/12_ip.PNG)
 
 - Next, we create a network security group for SSH `nsgRuleSSH`. A network security group secures our virtual machine as we connect it to the Internet. This particular rule secures it for port 22 - this means that we can SSH into our virtual machine:
 
     -  `$nsgRuleSSH = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleSSH" -Protocol "Tcp" -Direction "Inbound" -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 22 -Access "Allow"`
 
-    ![Azure Cloud Shell](images\HOL2\13_nsg_ssh.PNG)
+    ![Azure Cloud Shell](images/HOL2/13_nsg_ssh.PNG)
 
 - We repeat this again but for port 88 - this means that allow incoming web traffic from the Internet, `nsgRuleWeb`:
 
     - `$nsgRuleWeb = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleWWW" -Protocol "Tcp" -Direction "Inbound" -Priority 1001 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 80 -Access "Allow"`
 
-    ![Azure Cloud Shell](images\HOL2\14_nsg_web.PNG)
+    ![Azure Cloud Shell](images/HOL2/14_nsg_web.PNG)
 
 - We compile our two NSG rules:
 
     - `$nsg = New-AzNetworkSecurityGroup -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myNetworkSecurityGroup" -SecurityRules $nsgRuleSSH,$nsgRuleWeb`
 
-    ![Azure Cloud Shell](images\HOL2\15_nsg_definition.PNG)
+    ![Azure Cloud Shell](images/HOL2/15_nsg_definition.PNG)
 
 - Finally, we create our virtual network by calling our subnet, 2 NSG rules and public IP address:
 
     - `$nic = New-AzNetworkInterface -Name "myNic" -ResourceGroupName "myResourceGroup" -Location "EastUS" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id`
 
-    ![Azure Cloud Shell](images\HOL2\16_vnet.PNG)
+    ![Azure Cloud Shell](images/HOL2/16_vnet.PNG)
 
 - We can see our virtual network has been provisioned in Azure.
-![Azure Cloud Shell](images\HOL2\17_portal_vnet.PNG)
+![Azure Cloud Shell](images/HOL2/17_portal_vnet.PNG)
 
 ### **Create a Virtual Machine**
 
@@ -159,39 +159,39 @@ Next, we can create our virtual machine using PowerShell.
 - First, we define a credential object, by defining a secure password, where we enter in our SSH passphrase from earlier.
     -  `$securePassword = ConvertTo-SecureString '{SSH passphrase}' -AsPlainText -Force`
     
-    ![Azure Cloud Shell](images\HOL2\18_secure.PNG)
+    ![Azure Cloud Shell](images/HOL2/18_secure.PNG)
 
     -  `$cred = New-Object System.Management.Automation.PSCredential ("{your_name}", $securePassword)`
 
-    ![Azure Cloud Shell](images\HOL2\19_cred.PNG)
+    ![Azure Cloud Shell](images/HOL2/19_cred.PNG)
 
 - Next, we define our virtual machine configuration:
     - `$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize "Standard_D1_v2" | Set-AzVMOperatingSystem -Linux -ComputerName "myVM" -Credential $cred -DisablePasswordAuthentication | Set-AzVMSourceImage -PublisherName "Canonical" -Offer "UbuntuServer" -Skus "18.04-LTS" -Version "latest" | Add-AzVMNetworkInterface -Id $nic.Id`
 
-    ![Azure Cloud Shell](images\HOL2\20_vm_config.PNG)
+    ![Azure Cloud Shell](images/HOL2/20_vm_config.PNG)
 
 - We configure our SSH key:
     - `$sshPublicKey = cat ~/.ssh/id_rsa.pub`
     - `Add-AzVMSshPublicKey -VM $vmconfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"`
 
-    ![Azure Cloud Shell](images\HOL2\21_configure_sshkey.PNG)
+    ![Azure Cloud Shell](images/HOL2/21_configure_sshkey.PNG)
 
 - We provision our VM with one final command:
     - `New-AzVM -ResourceGroupName "myResourceGroup" -Location eastus -VM $vmConfig`
 
-    ![Azure Cloud Shell](images\HOL2\22_create_vm.PNG)
+    ![Azure Cloud Shell](images/HOL2/22_create_vm.PNG)
 
     - Deployment will take a few minutes, but once it's completed, you'll receive a 200 status code, meaning that deployment is successful and can be seen in the Portal.
 
-    ![Azure Cloud Shell](images\HOL2\23_200.PNG)
-    ![Azure Cloud Shell](images\HOL2\24_vm_portal.PNG)
+    ![Azure Cloud Shell](images/HOL2/23_200.PNG)
+    ![Azure Cloud Shell](images/HOL2/24_vm_portal.PNG)
 
 ### **Connect to VM**
 
 Now, we need to connect to the VM by getting the public IP address using the following command: 
 
 - `Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"` This address makes our VM discoverable on the Internet.
-    ![Azure Cloud Shell](images\HOL2\25_ip_address.PNG)
+    ![Azure Cloud Shell](images/HOL2/25_ip_address.PNG)
 
 - In the command line, we execute the next command which creates a SSH session, allowing us secure access to our VM. 
     - `ssh azureuser@{ip_address_from_previous_step}`
@@ -199,7 +199,7 @@ Now, we need to connect to the VM by getting the public IP address using the fol
     - Next, enter in your SSH passphrase from earlier.
     - We can see the Cloud Shell change and the command line is now running from the virtual machine that we created.
 
-    ![Azure Cloud Shell](images\HOL2\27_ubuntu_vm.PNG)
+    ![Azure Cloud Shell](images/HOL2/27_ubuntu_vm.PNG)
 
 ### **Install NGINX**
 
@@ -207,23 +207,23 @@ Next, we need to install NGINX on our VM using the following commands. Here we'r
 
 - `sudo apt-get -y update`
 
-![Azure Cloud Shell](images\HOL2\28_sudo1.PNG)
+![Azure Cloud Shell](images/HOL2/28_sudo1.PNG)
 
 - `sudo apt-get -y install nginx`
 
-![Azure Cloud Shell](images\HOL2\29_sudo2.PNG)
+![Azure Cloud Shell](images/HOL2/29_sudo2.PNG)
 
 - Once that's been installed, we can type `exit` to leave the SSH session. 
 
-![Azure Cloud Shell](images\HOL2\30_exit.png)
+![Azure Cloud Shell](images/HOL2/30_exit.PNG)
 
 ### **View our VM in action**
 
 To view our VM in action, we can copy and paste our public IP address found in Azure Portal for our VM into a new Browser tab. 
 
-![Azure Cloud Shell](images\HOL2\30b_vm.png)
-![Azure Cloud Shell](images\HOL2\31_vm_portal.png)
-![Azure Cloud Shell](images\HOL2\32_nginx_server.png)
+![Azure Cloud Shell](images/HOL2/30b_vm.PNG)
+![Azure Cloud Shell](images/HOL2/31_vm_portal.PNG)
+![Azure Cloud Shell](images/HOL2/32_nginx_server.PNG)
 
 ## Congratulations! 🎊✨🔥 
 
@@ -233,6 +233,6 @@ You've successfully provisioned a virtual machine from the command line using Po
 
 As best practice, we always delete resources once we've finished using them, by running the following command:
 
-![Azure Cloud Shell](images/HOL2/33_delete_rg.png)
+![Azure Cloud Shell](images/HOL2/33_delete_rg.PNG)
 
 ![Azure Cloud Shell](images/HOL2/34_delete_rg.PNG)
