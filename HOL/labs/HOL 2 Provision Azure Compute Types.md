@@ -233,6 +233,6 @@ You've successfully provisioned a virtual machine from the command line using Po
 
 As best practice, we always delete resources once we've finished using them, by running the following command:
 
-![Azure Cloud Shell](images\HOL2\33_delete_rg.png)
+![Azure Cloud Shell](images/HOL2/33_delete_rg.png)
 
-![Azure Cloud Shell](images\HOL2\34_delete_rg.PNG)
+![Azure Cloud Shell](images/HOL2/34_delete_rg.PNG)
