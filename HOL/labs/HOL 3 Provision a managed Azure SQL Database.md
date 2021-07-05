@@ -32,7 +32,7 @@ Our goal is to provision a SQL Database in Azure through the Portal and then exe
 
 Data storage is how we store data from devices and processes to be made accessible for later use. In fact, data storage has been part of our human history for a very long time. From the ancient Egyptians transcribing on papyrus scrolls to ancient India with history carved into caves and copper plates, through to punch cards in 18th century France and the age of the floppy disk and USB - data storage is part of how we collect and archive our important information. 
 
-![SQL](images\HOL3\0_types_of_storage.PNG)
+![SQL](images/HOL3/0_types_of_storage.PNG)
 
 Microsoft has been a pioneer in the data storage space for a long time and now we've even [stored the entire Superman movie on a piece of quartz glass](https://news.microsoft.com/innovation-stories/ignite-project-silica-superman/)!
 
