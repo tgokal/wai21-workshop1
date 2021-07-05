@@ -3,22 +3,21 @@
 **Duration**: 10-15 minutes
 
 ## Table of Contents
-- [Learning Objectives](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#learning-objectives)
-- [Our Goal and Background](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#our-goal-and-background)
-- [Solution Architecture](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#solution-architecture)
-- [Step-By-Step Guide](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#step-by-step-guide)
-    - [Log into Azure Sandbox](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#log-into-azure-sandbox)
-    - [Create a Database Resource](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#open-azure-cloud-shell)
-    - [Create a new Database Server](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-ssh-key-pair)
-    - [Configure Networking](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-resource-group)
-    - [Configure Security](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-virtual-network)
-    - [Configure Data source and sever firewall](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#create-a-virtual-machine)
-    - [Confirm Database creation](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#connect-to-vm)
-    - [Test Database by using Query Editor (preview)](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#install-nginx)
-    - [Add Client IP Address](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#view-our-vm-in-action)
-    - [Execute Query](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#view-our-vm-in-action)
-- [Congratulations!](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#congratulations-)
-- [Delete Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%202%20Provision%20Azure%20VM%20from%20Azure%20Cloud%20Shell.md#delete-resource-group)
+- [Learning Objectives](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#learning-objectives)
+- [Our Goal and Background](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#our-goal-and-background)
+- [Step-By-Step Guide](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#step-by-step-guide)
+    - [Log into Azure Sandbox](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#log-into-azure-sandbox)
+    - [Create a Database Resource](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#create-a-database-resource)
+    - [Create a new Database Server](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#create-a-new-database-server)
+    - [Configure Networking](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#configure-networking)
+    - [Configure Security](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#configure-security)
+    - [Configure Data source and sever firewall](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#configure-data-source-and-sever-firewall)
+    - [Confirm Database creation](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#confirm-database-creation)
+    - [Test Database by using Query Editor (preview)](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#test-database-by-using-query-editor-preview)
+    - [Add Client IP Address](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#add-client-ip-address)
+    - [Execute Query](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#execute-query)
+- [Congratulations!](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#congratulations-)
+- [Delete Resource Group](https://github.com/tgokal/wai21-workshop1/blob/master/HOL/labs/HOL%203%20Provision%20a%20managed%20Azure%20SQL%20Database.md#delete-resource-group)
 
 ## **Learning Objectives**
 - Understand the importance of data storage.
@@ -33,7 +32,7 @@ Our goal is to provision a SQL Database in Azure through the Portal and then exe
 
 Data storage is how we store data from devices and processes to be made accessible for later use. In fact, data storage has been part of our human history for a very long time. From the ancient Egyptians transcribing on papyrus scrolls to ancient India with history carved into caves and copper plates, through to punch cards in 18th century France and the age of the floppy disk and USB - data storage is part of how we collect and archive our important information. 
 
-![SQL](images\HOL3\0_types_of_storage.png)
+![SQL](images\HOL3\0_types_of_storage.PNG)
 
 Microsoft has been a pioneer in the data storage space for a long time and now we've even [stored the entire Superman movie on a piece of quartz glass](https://news.microsoft.com/innovation-stories/ignite-project-silica-superman/)!
 
@@ -48,16 +47,13 @@ Today, we're going to be focusing on [SQL Database](https://docs.microsoft.com/e
 
 But what is SQL in the first place? 
 
-![SQL](images\HOL3\0_sql.png)
+![SQL](images/HOL3/0_sql.png)
 
 Structured Query Language - or SQL - lets us access, manipulate and query a database for a specific piece of information. A SQL query is a question that you ask to your database. Think of it like a personalised bot that you see on online websites like JB Hi-Fi, Mecca Maxima and even Bunnings. But since databases don't understand a human readable language, we use SQL language to phrase our question. If any of the data in the database satisifies your query and its conditions, the query will successfully execute and you'll see a returned result which contains the data that answers your question. 
 
 Typically, we use SQL databases for structured data like product, sales and revenue information from a business. Structured data is any data that be easily organised, clearly defined, easy to access and easy to analyse data. For example, form fields, like Name, Age, Gender, Address, Billing Info, etc. Excel Spreadsheets is another popular example of structured data. We stored structured data in relational databases, like SQL. A relational database is a data storage solution which is organised in such a way that it's structured to recognise relations between stored items of information.
 
-![Relational Databases](images\HOL3\00_relational_databases.png)
-
-## **Solution Architecture**
-
+![Relational Databases](images/HOL3/00_relational_databases.png)
 
 ## **Step-By-Step Guide**
 
