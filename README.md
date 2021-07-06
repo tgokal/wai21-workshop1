@@ -4,9 +4,13 @@
 
 We're so excited to have you learn and grow in an rapidly evolving and ever important field. 
 
-You are the future of the Tech Industry and there is nothing that you can't do if you set your mind to it. There have been and will be many female technology trailblazers and we're excited to be part of that journey with you. #girlpower 🌱 👩‍💻
+Women in Tech have been historically underrepresented, with women making up 25% of the global Tech workforce in a variety of different roles, even though women making up almost half of the total workforce. [What's worse is that number is lower than the percentage of Tech roles held by women back in the 1980s](https://www.isemag.com/2020/10/telecom-the-latest-stats-on-women-in-tech/). In Australia, that number is slowly increasing from 24% in 2018 to 28% in 2020, according to the Australian Federal Government's May 2021 report on women in STEM. 
 
-This is the first workshop in the series and will be focused on the fundamentals that underpin cloud computing and [Microsoft Azure](https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/), the world's computer. 
+Despite the challenges, women have contributed significant and numerous breakthroughs that have been vital to the Tech Industry. From Ada Lovelace to Elaine Denniston, from Kirthiga Reddy to Fei-Fei Li - we are here to stand on the shoulders of giants. You are the future of the Tech Industry and there is nothing that you can't do if you set your mind to it. There have been and will be many female technology trailblazers and we're excited to be part of your learning journey with you. 🌱 👩‍💻
+
+![WAIxMicrosoft logo](logo/on_the_shoulders_of_giants.PNG)
+
+Everyone starts somewhere when they begin their technical journey, and today we'll be going through the first workshop in the series. It will feature both conceptual and practical elements and focused on the fundamentals that underpin Cloud Computing and [Microsoft Azure](https://azure.microsoft.com/en-us/overview/what-is-cloud-computing/), the world's computer. 
 
 Simply put, cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet (“the Cloud”) to offer faster innovation, flexible resources, and economies of scale. You typically pay only for cloud services you use, helping you lower your operating costs, run your infrastructure more efficiently, and scale as a business changes.
 
