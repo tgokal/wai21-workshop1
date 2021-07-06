@@ -117,7 +117,11 @@ Your identification will be saved and you'll be provided witha key fingerprint a
 
 ### **Create a Resource Group**
 
-Create a resource group by using the command `New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"`. 
+Create a resource group by using the command:
+
+```
+New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
+``` 
 
 We're choosing to keep the resource group in EastUS because there are restrictions in provisioning a VM and virtual network in this exercise within Australia. We wouldn't normally do this but for this short dev/test exercise, it will be inexpensive. 
 
@@ -129,45 +133,59 @@ Create a virtual network and related resources. These resources will allow our V
 
 - First we define a **subnet** which divides  our network into a smaller network with an address. It helps us set virtual boundaries within our network. We give our subnet a name `mySubnet` and an private IP address `192.168.1.0/24`:
 
-    -  `$subnetConfig = New-AzVirtualNetworkSubnetConfig -Name "mySubnet" -AddressPrefix 192.168.1.0/24`
+```
+$subnetConfig = New-AzVirtualNetworkSubnetConfig -Name "mySubnet" -AddressPrefix 192.168.1.0/24
+```
 
-    ![Azure Cloud Shell](images/HOL2/10_subnet_config.PNG)
+![Azure Cloud Shell](images/HOL2/10_subnet_config.PNG)
 
 - Next, we define our **virtual network**, which connects our VM to the Internet. We define it in our `myResourceGroup` and call our `$subnetConfig`:
 
-    - `$vnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myVNET" -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig`
+```
+$vnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myVNET" -AddressPrefix 192.168.0.0/16 -Subnet $subnetConfig
+```
 
-    ![Azure Cloud Shell](images/HOL2/11_vnet.PNG)
+![Azure Cloud Shell](images/HOL2/11_vnet.PNG)
 
 - We define our public IP address which makes our VM discoverable on the Internet. Again, we define this in our `myResourceGroup`:
 
-    - `$pip = New-AzPublicIpAddress -ResourceGroupName "myResourceGroup" -Location "EastUS" -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)"`
+```
+$pip = New-AzPublicIpAddress -ResourceGroupName "myResourceGroup" -Location "EastUS" -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)"
+```
 
-    ![Azure Cloud Shell](images/HOL2/12_ip.PNG)
+![Azure Cloud Shell](images/HOL2/12_ip.PNG)
 
 - Next, we create a network security group for SSH `nsgRuleSSH`. A network security group secures our virtual machine as we connect it to the Internet. This particular rule secures it for port 22 - this means that we can SSH into our virtual machine:
 
-    -  `$nsgRuleSSH = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleSSH" -Protocol "Tcp" -Direction "Inbound" -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 22 -Access "Allow"`
+```
+$nsgRuleSSH = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleSSH" -Protocol "Tcp" -Direction "Inbound" -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 22 -Access "Allow"
+```
 
-    ![Azure Cloud Shell](images/HOL2/13_nsg_ssh.PNG)
+![Azure Cloud Shell](images/HOL2/13_nsg_ssh.PNG)
 
 - We repeat this again but for port 88 - this means that allow incoming web traffic from the Internet, `nsgRuleWeb`:
 
-    - `$nsgRuleWeb = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleWWW" -Protocol "Tcp" -Direction "Inbound" -Priority 1001 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 80 -Access "Allow"`
+```
+$nsgRuleWeb = New-AzNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRuleWWW" -Protocol "Tcp" -Direction "Inbound" -Priority 1001 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 80 -Access "Allow"
+```
 
-    ![Azure Cloud Shell](images/HOL2/14_nsg_web.PNG)
+![Azure Cloud Shell](images/HOL2/14_nsg_web.PNG)
 
 - We compile our two NSG rules:
 
-    - `$nsg = New-AzNetworkSecurityGroup -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myNetworkSecurityGroup" -SecurityRules $nsgRuleSSH,$nsgRuleWeb`
+```
+$nsg = New-AzNetworkSecurityGroup -ResourceGroupName "myResourceGroup" -Location "EastUS" -Name "myNetworkSecurityGroup" -SecurityRules $nsgRuleSSH,$nsgRuleWeb
+```
 
-    ![Azure Cloud Shell](images/HOL2/15_nsg_definition.PNG)
+![Azure Cloud Shell](images/HOL2/15_nsg_definition.PNG)
 
 - Finally, we create our virtual network by calling our subnet, 2 NSG rules and public IP address:
 
-    - `$nic = New-AzNetworkInterface -Name "myNic" -ResourceGroupName "myResourceGroup" -Location "EastUS" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id`
+```
+$nic = New-AzNetworkInterface -Name "myNic" -ResourceGroupName "myResourceGroup" -Location "EastUS" -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
+```
 
-    ![Azure Cloud Shell](images/HOL2/16_vnet.PNG)
+![Azure Cloud Shell](images/HOL2/16_vnet.PNG)
 
 - We can see our virtual network has been provisioned in Azure.
 ![Azure Cloud Shell](images/HOL2/17_portal_vnet.PNG)
@@ -177,18 +195,26 @@ Create a virtual network and related resources. These resources will allow our V
 Next, we can create our virtual machine using PowerShell. 
 
 - First, we define a credential object, by defining a secure password, where we enter in our SSH passphrase from earlier.
-    -  `$securePassword = ConvertTo-SecureString '{SSH passphrase}' -AsPlainText -Force`
+
+```
+$securePassword = ConvertTo-SecureString '{SSH passphrase}' -AsPlainText -Force
+```
     
-    ![Azure Cloud Shell](images/HOL2/18_secure.PNG)
+![Azure Cloud Shell](images/HOL2/18_secure.PNG)
 
-    -  `$cred = New-Object System.Management.Automation.PSCredential ("{your_name}", $securePassword)`
+```
+$cred = New-Object System.Management.Automation.PSCredential ("{your_name}", $securePassword)
+```
 
-    ![Azure Cloud Shell](images/HOL2/19_cred.PNG)
+![Azure Cloud Shell](images/HOL2/19_cred.PNG)
 
 - Next, we define our virtual machine configuration:
-    - `$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize "Standard_D1_v2" | Set-AzVMOperatingSystem -Linux -ComputerName "myVM" -Credential $cred -DisablePasswordAuthentication | Set-AzVMSourceImage -PublisherName "Canonical" -Offer "UbuntuServer" -Skus "18.04-LTS" -Version "latest" | Add-AzVMNetworkInterface -Id $nic.Id`
 
-    ![Azure Cloud Shell](images/HOL2/20_vm_config.PNG)
+```
+$vmConfig = New-AzVMConfig -VMName "myVM" -VMSize "Standard_D1_v2" | Set-AzVMOperatingSystem -Linux -ComputerName "myVM" -Credential $cred -DisablePasswordAuthentication | Set-AzVMSourceImage -PublisherName "Canonical" -Offer "UbuntuServer" -Skus "18.04-LTS" -Version "latest" | Add-AzVMNetworkInterface -Id $nic.Id
+```
+
+![Azure Cloud Shell](images/HOL2/20_vm_config.PNG)
 
 - We configure our SSH key:
     - `$sshPublicKey = cat ~/.ssh/id_rsa.pub`
