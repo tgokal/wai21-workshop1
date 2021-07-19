@@ -90,9 +90,9 @@ By doing so, we'll be redirected to the Azure Marketplace.
 
 This is where we can provision Azure resources, like Azure Virtual Machines, Azure App Service and managed Azure SQL Databases, which is what we'll be doing later on. 
 
-For now, we'll just provision a WordPress web application. 
-
 ![Azure Marketplace resources](images/HOL1/4_azure_marketplace_lab_resources.PNG)
+
+For now, we'll just provision a WordPress web application. 
 
 ### **Provision Wordpress App**
 
