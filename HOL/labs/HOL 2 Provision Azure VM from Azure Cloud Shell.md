@@ -89,7 +89,11 @@ Selecting the Cloud Shell will open up PowerShell by default at the bottom of ou
 
 ### **Create a SSH key pair**
 
-Next, we need to create a [SSH key pair](https://www.ssh.com/academy/ssh/keygen) using `ssh-keygen`. 
+Next, we need to create a [SSH key pair](https://www.ssh.com/academy/ssh/keygen) using:
+
+```
+ssh-keygen
+```
 
 `ssh-keygen` is a tool for creating new authentication key pairs for SSH. Think of it like creating a password for your email or Messenger. By creating a key pair, we can automatically login and authenticate our identity. This prevents someone who isn't us from trying to access our VM. 
 
@@ -217,46 +221,62 @@ $vmConfig = New-AzVMConfig -VMName "myVM" -VMSize "Standard_D1_v2" | Set-AzVMOpe
 ![Azure Cloud Shell](images/HOL2/20_vm_config.PNG)
 
 - We configure our SSH key:
-    - `$sshPublicKey = cat ~/.ssh/id_rsa.pub`
-    - `Add-AzVMSshPublicKey -VM $vmconfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"`
 
-    ![Azure Cloud Shell](images/HOL2/21_configure_sshkey.PNG)
+```
+$sshPublicKey = cat ~/.ssh/id_rsa.pub
+```
+```
+Add-AzVMSshPublicKey -VM $vmconfig -KeyData $sshPublicKey -Path "/home/azureuser/.ssh/authorized_keys"
+```
+
+![Azure Cloud Shell](images/HOL2/21_configure_sshkey.PNG)
 
 - We provision our VM with one final command:
-    - `New-AzVM -ResourceGroupName "myResourceGroup" -Location eastus -VM $vmConfig`
 
-    ![Azure Cloud Shell](images/HOL2/22_create_vm.PNG)
+```
+New-AzVM -ResourceGroupName "myResourceGroup" -Location eastus -VM $vmConfig
+```
 
-    - Deployment will take a few minutes, but once it's completed, you'll receive a 200 status code, meaning that deployment is successful and can be seen in the Portal.
+![Azure Cloud Shell](images/HOL2/22_create_vm.PNG)
 
-    ![Azure Cloud Shell](images/HOL2/23_200.PNG)
-    ![Azure Cloud Shell](images/HOL2/24_vm_portal.PNG)
+Deployment will take a few minutes, but once it's completed, you'll receive a 200 status code, meaning that deployment is successful and can be seen in the Portal.
+
+![Azure Cloud Shell](images/HOL2/23_200.PNG)
+![Azure Cloud Shell](images/HOL2/24_vm_portal.PNG)
 
 ### **Connect to VM**
 
 Now, we need to connect to the VM by getting the public IP address using the following command: 
 
-- `Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"` This address makes our VM discoverable on the Internet.
+```
+Get-AzPublicIpAddress -ResourceGroupName "myResourceGroup" | Select "IpAddress"
+```
+This address makes our VM discoverable on the Internet.
 
-    ![Azure Cloud Shell](images/HOL2/25_ip_address.PNG)
+![Azure Cloud Shell](images/HOL2/25_ip_address.PNG)
 
 - In the command line, we execute the next command which creates a SSH session, allowing us secure access to our VM. 
-    - `ssh azureuser@{ip_address_from_previous_step}`
-    - You'll be prompted if you want to continue connecting during the session. Enter `yes`.
-    - Next, enter in your SSH passphrase from earlier.
-    - We can see the Cloud Shell change and the command line is now running from the virtual machine that we created.
 
-    ![Azure Cloud Shell](images/HOL2/27_ubuntu_vm.PNG)
+```
+ssh azureuser@{ip_address_from_previous_step}
+```
+You'll be prompted if you want to continue connecting during the session. Enter `yes`. Next, enter in your SSH passphrase from earlier. We can see the Cloud Shell change and the command line is now running from the virtual machine that we created.
+
+![Azure Cloud Shell](images/HOL2/27_ubuntu_vm.PNG)
 
 ### **Install NGINX**
 
 Next, we need to install NGINX on our VM using the following commands. Here we're installing additional software or packages - this is very common in software development.
 
-- `sudo apt-get -y update`
+```
+sudo apt-get -y update
+```
 
 ![Azure Cloud Shell](images/HOL2/28_sudo1.PNG)
 
-- `sudo apt-get -y install nginx`
+```
+sudo apt-get -y install nginx
+```
 
 ![Azure Cloud Shell](images/HOL2/29_sudo2.PNG)
 
