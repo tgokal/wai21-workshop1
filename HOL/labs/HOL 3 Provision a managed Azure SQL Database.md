@@ -177,7 +177,9 @@ Now we're ready to query our database using SQL!
 
 Let's try out a basic query, where we're selecting the first 1000 rows in our Address database - this contains our customers' addresses.
 
-`SELECT TOP(1000) * FROM [SalesLT].[Address]`
+```
+SELECT TOP(1000) * FROM [SalesLT].[Address]
+```
 
 Here we're using the `SELECT` keyword to select our data. We specify that we want the first entries by the `TOP()` function and then include `1000` as the number of first entries to be returned in `TOP(1000)`. Next, we need to make sure that we're specifying where we're getting these first 1000 entries by using the keyword `FROM`. In our case, we're returning the `Address` field from the `SalesLT` table. The `.` between `[SalesLT]` and `[Address]` is used because we know that `[Address]` is an **attribute** in the `[SalesLT]` table.
 
@@ -185,7 +187,9 @@ Here we're using the `SELECT` keyword to select our data. We specify that we wan
 
 We can see that we're returning the Residential Address, Cirty, State, Country and Postcode of our Customers. Looks like we're getting a hang of this. Let's try out another similar query, but with a different table.
 
-`SELECT TOP(1000) * FROM [SalesLT].[ProductDescription]`
+```
+SELECT TOP(1000) * FROM [SalesLT].[ProductDescription]
+```
 
 We can see the same query, but now we're returning Product Descriptions from the same `[SalesLT]` table. Out of observation, we can see that we can store strings just as well as integers and floats in our database.
 
