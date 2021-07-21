@@ -157,7 +157,11 @@ We can log into the SQL database by entering in our password that we used earlie
 
 ![Home Page of Azure Portal](images/HOL3/17_password.PNG)
 
-You should receive an error that you can't login. This means that our IP address - which uniquely identifies our computer - doesn't have the right access for our database through the firewall. We need to configure access correctly by addding our client IP address as rule for our firewall. This will let us access our SQL database from our computer and Azure Portal. 
+You should receive an error that you can't login. 
+
+![Home Page of Azure Portal](images/4.PNG)
+
+This means that our IP address - which uniquely identifies our computer - doesn't have the right access for our database through the firewall. We need to configure access correctly by addding our client IP address as rule for our firewall. This will let us access our SQL database from our computer and Azure Portal. 
 
 ### **Add Client IP Address**
 

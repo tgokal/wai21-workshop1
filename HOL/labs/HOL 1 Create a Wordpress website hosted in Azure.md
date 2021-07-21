@@ -38,11 +38,19 @@ Our goal is to provision a Wordpress Installation Azure Website that our users c
 
 ## **Step-By-Step Guide**
 
-### **Log into Azure Sandbox**
+### **Create your Azure Student Subscription**
 
-Once you've logged into your Azure sandbox, you'll arrive at the **Home Page of the Azure Portal**. 
+Navigate to https://azure.microsoft.com/en-us/free/students/ and click on the **Start Free** button to create your free credit Azure for Students account. 
 
-![Home Page of Azure Portal](images/HOL1/1_homepage.PNG "Home page of Azure Portal")
+![Home Page of Azure Portal](images/0.PNG)
+
+Fill in your phone number to receive a verification code in order to create your account. 
+
+![Home Page of Azure Portal](images/1.PNG)
+
+Once your account has been created, you'll see the Azure Homepage.
+
+![Home Page of Azure Portal](images/2a.PNG)
 
 ### **Select Resource Groups**
 

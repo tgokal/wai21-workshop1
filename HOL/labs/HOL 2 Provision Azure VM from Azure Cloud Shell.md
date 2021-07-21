@@ -85,6 +85,10 @@ Select **Azure Cloud Shell** on the top right corner. Azure Cloud Shell is an in
 
 Selecting the Cloud Shell will open up PowerShell by default at the bottom of our Azure Portal. The Azure PowerShell module is used to create and manage Azure resources from the PowerShell command line. Mac OS and Linux OS uses BASH as the scripting language, whilst Windows uses PowerShell as the default scripting language.
 
+You might be prompted to mount storage like the below image. Select your Subscription and click **Create** - this will mount an Azure Storage account to the terminal and collect related information. 
+
+![Azure Cloud Shell](images/3.PNG)
+
 ![Azure Cloud Shell](images/HOL2/3_openshell.PNG)
 
 ### **Create a SSH key pair**
