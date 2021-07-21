@@ -69,12 +69,6 @@ To see our VM in action, you'll also SSH to the VM and install the NGINX web ser
 
 ## **Step-By-Step Guide**
 
-### **Log into Azure Sandbox**
-
-Once you've logged into your Azure sandbox, you'll arrive at the **Home Page of the Azure Portal**. 
-
-![Home Page of Azure Portal](images/HOL1/1_homepage.PNG)
-
 ### **Open Azure Cloud Shell**
 
 Select **Azure Cloud Shell** on the top right corner. Azure Cloud Shell is an interactive, authenticated, browser-accessible shell for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work, either Bash or PowerShell. 

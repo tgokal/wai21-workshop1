@@ -57,12 +57,6 @@ Typically, we use SQL databases for structured data like product, sales and reve
 
 ## **Step-By-Step Guide**
 
-### **Log into Azure Sandbox**
-
-Once you've logged into your Azure sandbox, you'll arrive at the **Home Page of the Azure Portal**. 
-
-![Home Page of Azure Portal](images/HOL1/1_homepage.PNG)
-
 ### **Create a Database Resource**
 Next, we need to create a Database Resource from Azure Marketplace. Select on **Create a resource** to be directed to the Azure Marketplace.
 
