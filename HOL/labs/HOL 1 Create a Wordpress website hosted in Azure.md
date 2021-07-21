@@ -50,7 +50,7 @@ Fill in your phone number to receive a verification code in order to create your
 
 Once your account has been created, you'll see the Azure Homepage.
 
-![Home Page of Azure Portal](images/2a.PNG)
+![Home Page of Azure Portal](images/2a.png)
 
 ### **Select Resource Groups**
 
