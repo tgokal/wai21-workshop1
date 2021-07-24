@@ -31,11 +31,11 @@
 
 Our goal is to provision a Linux virtual machine (VM) in Azure with PowerShell using Azure Cloud Shell. 
 
-Think of a VM as a server - or computer - that exists just like your PC or laptop, but only now it's completely managed by Microsoft in an Azure Datacenter, located in an Azure Region. Microsoft has 42 Azure Regions, more than any cloud provider, and we've even created an [underwater data center](https://news.microsoft.com/innovation-stories/project-natick-underwater-datacenter/)! 
+Think of a VM as a server - or computer - that exists just like your PC or laptop, but only now it's software version of a computer and completely managed by Microsoft in an Azure Datacenter, located in an Azure Region. Microsoft has 42 Azure Regions, more than any cloud provider, and we've even created an [underwater data center](https://news.microsoft.com/innovation-stories/project-natick-underwater-datacenter/)! 
 
 ![Home Page of Azure Portal](images/HOL2/0_datacenters.jpg)
 
-Virtual machines are like any computer you would have worked with before, or like the one you're using now; they need software and hardware to work. In our case, we're provisioning a Linux virtual machine.
+The concept of a virtual machine is like any computer you would have worked with before, or like the one you're using now; they need software and hardware to work. In our case, we're provisioning a Linux virtual machine.
 
 Linux is a type of operating system (OS). You've heard of Windows and Mac - these are operating systems created by Microsoft and Apple respectively and are unique and main product differentiators. Other popular operating systems you would have heard of or used are Android and Linux. 
 
@@ -49,7 +49,7 @@ Whenever we use a computer, we're using it's software, but we also know that a c
 
 Whenever we buy a computer, the hardware components, like CPU and RAM are fixed into place - what we see is what we get. That's all good for our university assignments or Excel spreadsheets, but when big organisations are managing websites and apps where the number of users could increase or decrease, it would be incredibly beneficial to lever with these fixed components. 
 
-Enter Microsoft Azure! With only a couple of clicks, we can use a computer - or virtual machine - with a different amount of RAM or a different type of processing unit. That's the power (and not to mention cost effectiveness) of Azure - a user or organisation can scale the number of fixed hardware components (i.e. RAM, CPU vcores) depending on workload, online traffic and amount of data being collected. 
+Enter Microsoft Azure! With only a couple of clicks, we can use a virtualised computer - or virtual machine - with a different amount of RAM or a different type of processing unit. That's the power (and not to mention cost effectiveness) of Azure - a user or organisation can scale the number of fixed hardware components (i.e. RAM, CPU vcores) depending on workload, online traffic and amount of data being collected. 
 
 Think about Christmas or Black Friday - the demand for online shopping is massive! Online stores like eBay, Myers, Apple, H&M, Lululemon and Uniqlo for example, can scale their virtual machines up and down to support website demand all because they're hosted in the Cloud, and avoid receiving tweets like these...
 
