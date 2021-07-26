@@ -87,15 +87,15 @@ You might be prompted to mount storage like the below image. Select your Subscri
 
 ### **Create a SSH key pair**
 
-Next, we need to create a [SSH key pair](https://www.ssh.com/academy/ssh/keygen) using:
-
-```
-ssh-keygen
-```
+Next, we need to create a [SSH key pair](https://www.ssh.com/academy/ssh/keygen) using `ssh-keygen`
 
 `ssh-keygen` is a tool for creating new authentication key pairs for SSH. Think of it like creating a password for your email or Messenger. By creating a key pair, we can automatically login and authenticate our identity. This prevents someone who isn't us from trying to access our VM. 
 
-We create a cryptographic key pair by executing the following line in the Cloud Shell: `ssh-keygen -t rsa -b 4096`. 
+We create a cryptographic key pair by executing the following line in the Cloud Shell: 
+
+```
+ssh-keygen -t rsa -b 4096
+```
 
 - `ssh-keygen` is the command that we use to create our key pair.
 - `-t` lets us specify which cryptographic algorithm we implement on the generation of our key pair
